@@ -82,14 +82,6 @@ option(GRACKLE_DEFINE_INSTALL_RULES
   "enable Grackle's installation rules" ${GRACKLE_IS_TOP_LEVEL})
 option(GRACKLE_BUILD_TESTS "build Grackle tests driven by CTest" OFF)
 
-if (GRACKLE_BUILD_TESTS)
-  set(_GRACKLE_EXAMPLES_DEFAULT ON)
-else()
-  set(_GRACKLE_EXAMPLES_DEFAULT ${GRACKLE_IS_TOP_LEVEL})
-endif()
-option(GRACKLE_EXAMPLES
-  "compile grackle examples" ${_GRACKLE_EXAMPLES_DEFAULT})
-
 # configure custom machine-specific optimization-flags (specified in host-config
 # files). I'm not really sure we should support this when Grackle isn't the
 # top-level project (hence the warning...)
@@ -164,11 +156,6 @@ include(dependencies.cmake)
 # Main build targets
 # ------------------
 add_subdirectory(src/clib)
-
-# declare build-recipies for examples
-if (GRACKLE_EXAMPLES)
-  add_subdirectory(src/example)
-endif()
 
 # Tests
 # -----

@@ -1927,6 +1927,20 @@ c
 !     &       + H2I(i,j,k)*( k21(i) * HI(i,j,k)**2.0_DKIND
 !     &                    - k23(i) * H2I(i,j,k))
 !H * (k22 * H^2 - k13 * H_2) + H_2 * (k21 * H^2 - k23 * H_2) */
+
+!     H2 photo-dissociation heating
+!       Kim+ 2023, Hollenbach & McKee 1979, Baczynski+ 2015
+!       Per dissociation event:
+!         0.4 eV  (direct dissociation, always thermalized)
+!       + 16 eV * n/(n + n_crit)   (UV pumping cascade,
+!         thermalized fraction grows with density)
+!       Re-using h2heatfac (= n/(n+n_crit) from Omukai 2000) above,
+!       which is the same critical-density factor Grackle applies
+!       to its H2 formation heating, so this is fully consistent.
+!       f_pump = 8 ; n_crit fits from ncrn/ncrd1/ncrd2 tables.
+            edot(i) = edot(i) + chunit *
+     &           (0.4_DKIND + 16._DKIND * h2heatfac(i)) *
+     &           k31shield(i) * H2I(i,j,k) * 0.5_DKIND
          endif                  ! itmask
          enddo
       endif

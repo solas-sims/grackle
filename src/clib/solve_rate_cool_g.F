@@ -34,7 +34,8 @@
      &                avgsighi, avgsighei, avgsigheii,
      &                iradtrans, iradcoupled, iradstep,
      &                irt_honly, kphHI, kphHeI, kphHeII, kdissH2I,
-     &                photogamma, xH2shield,
+     &                photogammaHI, photogammaHeI, photogammaHeII, 
+     &                xH2shield,
      &                ierr,
      &                ih2optical, iciecool, ithreebody, ciecoa, 
      &                icmbTfloor, iClHeat, clEleFra,
@@ -194,7 +195,7 @@
 !  Radiative transfer fields
 
       R_PREC  kphHI(in,jn,kn), kphHeI(in,jn,kn), kphHeII(in,jn,kn),
-     &        kdissH2I(in,jn,kn), photogamma(in,jn,kn)
+     &        kdissH2I(in,jn,kn), photogammaHI(in,jn,kn), photogammaHeI(in,jn,kn), photogammaHeII(in,jn,kn)
 
 !  H2 self-shielding length-scale field
 
@@ -492,7 +493,7 @@
      &                gammaha_eff, gasgr_tdust, regr,
      &                iradshield, avgsighi, avgsighei, avgsigheii,
      &                k24, k26,
-     &                iradtrans, photogamma,
+     &                iradtrans, irt_honly, photogammaHI, photogammaHeI, photogammaHeII,
      &                ih2optical, iciecool, ciecoa, cieco,
      &                icmbTfloor, iClHeat, clEleFra,
      &                priGridRank, priGridDim,

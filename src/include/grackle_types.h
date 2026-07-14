@@ -89,7 +89,9 @@ typedef struct
 
   gr_float *temperature_floor;
 
-  gr_float *RT_heating_rate;
+  gr_float *RT_HI_heating_rate;
+  gr_float *RT_HeI_heating_rate;
+  gr_float *RT_HeII_heating_rate;
   gr_float *RT_HI_ionization_rate;
   gr_float *RT_HeI_ionization_rate;
   gr_float *RT_HeII_ionization_rate;

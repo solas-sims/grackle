@@ -43,7 +43,6 @@ ENTRY(specific_heating_rate)
 
 ENTRY(temperature_floor)
 
-ENTRY(RT_heating_rate)
 ENTRY(RT_HI_ionization_rate)
 ENTRY(RT_HeI_ionization_rate)
 ENTRY(RT_HeII_ionization_rate)

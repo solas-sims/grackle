@@ -22,7 +22,8 @@
      &                gaHIa, gaH2a, gaHea, gaHpa, gaela,
      &                h2ltea, gasgra,
      &                iradshield, avgsighi, avgsighei, avgsigheii,
-     &                k24, k26, iradtrans, photogamma,
+     &                k24, k26, 
+     &                iradtrans, irt_honly, photogammaHI, photogammaHeI, photogammaHeII,
      &                ih2optical, iciecool, ciecoa, 
      &                icmbTfloor, iClHeat, clEleFra,
      &                priGridRank, priGridDim,
@@ -65,7 +66,7 @@
      &        iexpand, ih2co, ipiht, ispecies, imetal, idim,
      &        imcool, idust, idustall,
      &        idustfield, idustrec, igammah, ih2optical, iciecool,
-     &        clnew, iVheat, iMheat, iTfloor, iradtrans, iradshield,
+     &        clnew, iVheat, iMheat, iTfloor, iradtrans, irt_honly, iradshield,
      &        iisrffield
 
       real*8  aye, temstart, temend,
@@ -81,7 +82,7 @@
      &        Vheat(in,jn,kn), Mheat(in,jn,kn), Tfloor(in,jn,kn),
      &        isrf_habing(in,jn,kn),
      &        cooltime(in,jn,kn)
-      real*8  photogamma(in,jn,kn)
+      real*8  photogammaHI(in,jn,kn), photogammaHeI(in,jn,kn), photogammaHeII(in,jn,kn)
       real*8  hyd01ka(nratec), h2k01a(nratec), vibha(nratec), 
      &        rotha(nratec), rotla(nratec), gpldla(nratec),
      &        gphdla(nratec), hdltea(nratec), hdlowa(nratec),
@@ -278,7 +279,8 @@
      &                dust2gas, rhoH, mynh, myde,
      &                gammaha_eff, gasgr_tdust, regr,
      &                iradshield, avgsighi, avgsighei, avgsigheii,
-     &                k24, k26, iradtrans, photogamma,
+     &                k24, k26, 
+     &                iradtrans, irt_honly, photogammaHI, photogammaHeI, photogammaHeII,
      &                ih2optical, iciecool, ciecoa, cieco,
      &                icmbTfloor, iClHeat, clEleFra,
      &                priGridRank, priGridDim,
